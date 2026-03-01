@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')"
 
 # Use gunicorn with long timeout for slow model loading
-CMD gunicorn --bind 0.0.0.0:$PORT --workers 1 --timeout 300 --preload app:app
+CMD gunicorn --bind 0.0.0.0:$PORT --workers 1 --timeout 900 --preload app:app
